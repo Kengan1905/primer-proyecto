@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Este es el primer template que cree</h1>
 
-    <p>{{mensaje}}</p>
-    {% if segundo_redondo %}
-    <p style='color: yellow;'>{{segundos}}</p>
-    {% elif segundo_par %}
-    <p style='color: red;'>{{segundos}}</p>
-    {% else %}
-    <p style='color: green;'>{{segundos}}</p>
-    {% endif %}
+{% extends 'base.html' %}
 
-    {% for numero in listado_de_numeros %}
-    <p style='color: blue;'>{{numero}}</p>
-    {% endfor %}
+{% block title_head %}
+<title>Prueba</title>
+{% endblock title_head %}
 
-</body>
-</html>
+{% block h1_header %}
+<h1>Este es el primer template que cree</h1>
+{% endblock h1_header %}
+
+{% block contenido %}
+<p>{{mensaje}}</p>
+{% if segundo_redondo %}
+<p style='color: yellow;'>{{segundos}}</p>
+{% elif segundo_par %}
+<p style='color: red;'>{{segundos}}</p>
+{% else %}
+<p style='color: green;'>{{segundos}}</p>
+{% endif %}
+
+{% for numero in listado_de_numeros %}
+<p style='color: blue;'>{{numero}}</p>
+{% endfor %}
+{% endblock contenido %}
